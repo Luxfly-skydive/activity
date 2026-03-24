@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFRQP707XB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JFRQP707XB');
-  </script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luxfly Indoor Skydiving — The Ultimate Freefall Experience</title>
@@ -151,6 +142,11 @@ section{padding:clamp(48px,8vw,80px) 24px}
 footer{background:#1a1a1d;color:rgba(255,255,255,0.6);padding:40px 24px;text-align:center;font-size:0.85rem}
 footer a{color:var(--pink);text-decoration:none}
 footer .hours{margin:12px 0;font-size:0.82rem}
+/* HERO TRUST BAR */
+.hero-trust-bar{font-size:0.88rem;font-weight:600;color:rgba(255,255,255,0.95);background:rgba(0,0,0,0.28);display:inline-block;padding:7px 20px;border-radius:50px;margin-bottom:22px;letter-spacing:0.3px;border:1px solid rgba(255,255,255,0.25);}
+/* STICKY BOOK NOW — mobile only */
+@media(max-width:768px){.sticky-book{position:fixed;bottom:0;left:0;right:0;z-index:200;padding:10px 20px 22px;background:linear-gradient(to top,#fff 55%,rgba(255,255,255,0));pointer-events:none;}.sticky-book a{display:block;text-align:center;padding:14px 24px;border-radius:50px;font-size:1rem;font-weight:700;text-decoration:none;background:var(--pink);color:#fff!important;box-shadow:0 4px 24px rgba(232,44,163,0.45);pointer-events:all;}}
+@media(min-width:769px){.sticky-book{display:none;}}
 </style>
 </head>
 <body>
@@ -178,9 +174,10 @@ footer .hours{margin:12px 0;font-size:0.82rem}
     <div class="hero-badge" data-i18n="hero_badge">LUXEMBOURG'S #1 INDOOR SKYDIVING</div>
     <h1 data-i18n="hero_title">Feel the Freefall. <span>No Plane Needed.</span></h1>
     <p data-i18n="hero_sub">Experience the thrill of skydiving in a state-of-the-art wind tunnel. 100% safe, absolutely unforgettable. Ages 4 to 99.</p>
+    <div class="hero-trust-bar" data-i18n="trust_bar">From €64.90  ·  No experience needed  ·  Luxembourg</div>
     <div class="hero-btns">
-      <a href="https://shop.indoorskydive.lu/adults" class="btn btn-pink" data-i18n="hero_cta1">Book Your Flight →</a>
-      <a href="#packages" class="btn btn-outline" data-i18n="hero_cta2">See Packages</a>
+      <a href="#packages" class="btn btn-white" data-i18n="hero_cta2">See Packages</a>
+      <a href="https://shop.indoorskydive.lu/adults" class="btn btn-outline" data-i18n="hero_cta1">Book Your Flight →</a>
     </div>
   </div>
 </div>
@@ -415,7 +412,8 @@ faq5_q:"Y a-t-il des restrictions ?",faq5_a:"Le poids maximum est de 120 kg pour
 faq6_q:"Où se trouve Luxfly ?",faq6_a:"Luxfly est au Rue De Grass 103, 6700 Sterpenich — à la frontière Luxembourg/Belgique. Facile d'accès depuis Luxembourg-Ville (25 min), Bruxelles (2h) et la Grande Région.",
 cta_title:"Prêt à Voler ?",cta_sub:"Réservez votre vol aujourd'hui et découvrez pourquoi des milliers de personnes disent que Luxfly est l'expérience la plus incroyable au Luxembourg.",
 cta_btn1:"Réservez Votre Vol →",cta_btn2:"Offrir en Cadeau",
-nav_activity:"L'Activité",nav_birthday:"Anniversaires",nav_team:"Team Building",nav_gift:"Bons Cadeaux",nav_book:"Réserver",
+nav_activity:"L'Activité",nav_birthday:"Anniversaires",nav_team:"Team Building",nav_gift:"Bons Cadeaux",trust_bar:"À partir de €64.90 · Aucune expérience requise · Luxembourg",
+nav_book:"Réserver",
 footer_hours:"Mer–Ven : 12h00–20h00 | Sam–Dim : 10h00–18h00 | Fermé Lun & Mar (sauf 1er lundi du mois)"
 },
 de:{
@@ -460,7 +458,8 @@ faq5_q:"Gibt es Einschränkungen?",faq5_a:"Maximales Gewicht 120 kg aus Sicherhe
 faq6_q:"Wo befindet sich Luxfly?",faq6_a:"Luxfly liegt in der Rue De Grass 103, 6700 Sterpenich — direkt an der Grenze Luxemburg/Belgien. Gut erreichbar von Luxemburg-Stadt (25 Min.), Brüssel (2h) und der Großregion.",
 cta_title:"Bereit zum Fliegen?",cta_sub:"Buche deinen Flug heute und entdecke, warum Tausende Luxfly als das unglaublichste Erlebnis in Luxemburg bezeichnen.",
 cta_btn1:"Flug Buchen →",cta_btn2:"Als Geschenk Schenken",
-nav_activity:"Die Aktivität",nav_birthday:"Geburtstage",nav_team:"Team Building",nav_gift:"Geschenkgutscheine",nav_book:"Buchen",
+nav_activity:"Die Aktivität",nav_birthday:"Geburtstage",nav_team:"Team Building",nav_gift:"Geschenkgutscheine",trust_bar:"Ab €64.90 · Keine Erfahrung nötig · Luxemburg",
+nav_book:"Buchen",
 footer_hours:"Mi–Fr: 12:00–20:00 | Sa–So: 10:00–18:00 | Geschlossen Mo & Di (außer 1. Montag im Monat)"
 }
 };
@@ -512,6 +511,11 @@ document.addEventListener('click', function(e) {
     }
   }
 });
+</script>
+<!-- STICKY MOBILE BOOK NOW -->
+<div class="sticky-book" id="stickyBook"><a href="https://shop.indoorskydive.lu/adults" data-i18n="hero_cta1">Book Your Flight →</a></div>
+<script>
+(function(){var s=document.getElementById('stickyBook');if(!s)return;var h=document.querySelector('.hero');function upd(){if(!h)return;var b=h.getBoundingClientRect().bottom;s.style.display=b>80?'none':'';}window.addEventListener('scroll',upd,{passive:true});upd();})();
 </script>
 </body>
 </html>
